@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const TopBar = styled.div`
+const StyledTopBar = styled.div`
   height: 56px;
   width: 100%;
   background-color: #dedede;
@@ -12,7 +12,7 @@ const TopBar = styled.div`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 15px 50px 0 rgba(0, 0, 0, 0.15);
 `;
 
-const Logo = styled.img.attrs({
+const StyledLogo = styled.img.attrs({
   src: "./images/logo_classic.png"
 })`
   position: absolute;
@@ -21,7 +21,7 @@ const Logo = styled.img.attrs({
   width: 39px;
 `;
 
-const IconBackground = styled.div`
+const StyledIconBackground = styled.div`
   position: absolute;
   left: 0px;
   top: 0px;
@@ -34,7 +34,7 @@ const IconBackground = styled.div`
   height: 56px;
 `;
 
-const CartIcon = styled.img.attrs({
+const StyledCartIcon = styled.img.attrs({
   src: "./images/ico_cart.png"
 })`
   position: absolute;
@@ -45,7 +45,7 @@ const CartIcon = styled.img.attrs({
   height: 15px;
 `;
 
-const OrderNumber = styled.div`
+const StyledOrderNumber = styled.div`
   position: absolute;
   font-size: 14px;
   font-family: "Source Sans Pro";
@@ -59,12 +59,12 @@ const OrderNumber = styled.div`
 const MenuBar = () => {
   return (
     <>
-      <TopBar />
-      <Logo />
-      <IconBackground>
-        <CartIcon />
-        <OrderNumber>2</OrderNumber>
-      </IconBackground>
+      <StyledTopBar />
+      <StyledLogo />
+      <StyledIconBackground>
+        <StyledCartIcon />
+        <StyledOrderNumber>2</StyledOrderNumber>
+      </StyledIconBackground>
     </>
   );
 };
