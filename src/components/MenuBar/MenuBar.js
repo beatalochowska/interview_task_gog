@@ -1,6 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+const StyledContainer = styled.div`
+  width: 1090px;
+  height: 56px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const StyledTopBar = styled.div`
   height: 56px;
   width: 100%;
@@ -15,56 +25,49 @@ const StyledTopBar = styled.div`
 const StyledLogo = styled.img.attrs({
   src: "./images/logo_classic.png"
 })`
-  position: absolute;
-  left: 111px;
-  top: 12px;
-  width: 39px;
+  width: 42px;
+  height: 36px;
+  margin: 10px 0;
 `;
 
 const StyledIconBackground = styled.div`
-  position: absolute;
-  left: 0px;
-  top: 0px;
   border-left: 1px solid rgba(0, 0, 0, 0.078);
   border-right: 1px solid rgba(0, 0, 0, 0.078);
-  position: absolute;
-  left: 1114px;
-  top: 0px;
   width: 56px;
   height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledCartIcon = styled.img.attrs({
   src: "./images/ico_cart.png"
 })`
-  position: absolute;
-  left: 14px;
   opacity: 0.851;
-  top: 21px;
   width: 17px;
   height: 15px;
 `;
 
 const StyledOrderNumber = styled.div`
-  position: absolute;
   font-size: 14px;
   font-family: "Source Sans Pro";
   color: rgb(64, 64, 64);
   line-height: 1.2;
   text-align: left;
-  top: 20.1px;
-  right: 15px;
 `;
 
 const MenuBar = () => {
   return (
     <>
-      <StyledTopBar />
-      <StyledLogo />
-      <StyledIconBackground>
-        <StyledCartIcon />
-        <StyledOrderNumber>2</StyledOrderNumber>
-      </StyledIconBackground>
+      <StyledTopBar>
+        <StyledContainer>
+          <StyledLogo />
+          <StyledIconBackground>
+            <StyledCartIcon />
+            <StyledOrderNumber>2</StyledOrderNumber>
+          </StyledIconBackground>
+        </StyledContainer>
+      </StyledTopBar>
     </>
   );
 };
