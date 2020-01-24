@@ -8,6 +8,7 @@ const StyledHeader = styled.div`
   font-weight: bold;
   line-height: 1.2;
   text-transform: uppercase;
+  margin: 40px 0 20px;
 `;
 
 function GameHeader() {
