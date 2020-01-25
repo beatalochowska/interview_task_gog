@@ -12,16 +12,30 @@ const StyledList = styled.div`
 function GameList() {
   return (
     <StyledList>
-      <GameCard link="./images/card1.png" title="oddworld: stranger’s wrath" />
-      <GameCard link="./images/card2.png" title="chaos on deponia" />
+      <GameCard
+        link="./images/card1.png"
+        title="oddworld: stranger’s wrath"
+        price="9.99"
+      />
+      <GameCard
+        link="./images/card2.png"
+        title="chaos on deponia"
+        price="9.99"
+      />
       <GameCard
         link="./images/card3.png"
         title="The settlers 2: gold  edition"
+        price="9.99"
       />
-      <GameCard link="./images/card4.png" title="neverwinter nights" />
+      <GameCard
+        link="./images/card4.png"
+        title="neverwinter nights"
+        price="4.99"
+      />
       <GameCard
         link="./images/card5.png"
         title="assassin’s creed:  director’s cut"
+        price="9.99"
       />
     </StyledList>
   );

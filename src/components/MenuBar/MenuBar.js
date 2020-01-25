@@ -38,6 +38,27 @@ const StyledIconBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  &:hover {
+    background-color: #f7f7f7;
+  }
+`;
+
+const StyledCartContent = styled.div`
+  width: 370px;
+  height: 65px;
+  position: absolute;
+  background-color: #f7f7f7;
+  position: absolute;
+  z-index: 10;
+  display: none;
+  top: 56px;
+  right: 0;
+
+  ${StyledIconBackground}:hover & {
+    display: block;
+  }
 `;
 
 const StyledCartIcon = styled.img.attrs({
@@ -65,6 +86,7 @@ const MenuBar = () => {
           <StyledIconBackground>
             <StyledCartIcon />
             <StyledOrderNumber>2</StyledOrderNumber>
+            <StyledCartContent />
           </StyledIconBackground>
         </StyledContainer>
       </StyledTopBar>
