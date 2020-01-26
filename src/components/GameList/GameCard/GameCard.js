@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import PriceButton from "./PriceButton/PriceButton";
 
+import gamesData from "../../../data/db";
+
 const StyledCard = styled.div`
   background-color: rgb(222, 222, 222);
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
@@ -19,14 +21,16 @@ const StyledGameTitle = styled.div`
   margin: 10px;
 `;
 
-function GameCard(props) {
-  return (
-    <StyledCard>
-      <img src={props.link} />
-      <StyledGameTitle>{props.title}</StyledGameTitle>
-      <PriceButton price={props.price} />
-    </StyledCard>
-  );
+function GameCard() {
+  return gamesData.map(function(x) {
+    return (
+      <StyledCard>
+        <img src={x.link} />
+        <StyledGameTitle>{x.title}</StyledGameTitle>
+        <PriceButton price={x.price} />
+      </StyledCard>
+    );
+  });
 }
 
 export default GameCard;

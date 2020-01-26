@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import Cart from "../Cart/Cart";
+
 const StyledContainer = styled.div`
   width: 1090px;
   height: 56px;
@@ -85,7 +87,9 @@ const MenuBar = () => {
           <StyledLogo />
           <StyledIconBackground>
             <StyledCartIcon />
-            <StyledOrderNumber>2</StyledOrderNumber>
+            <StyledOrderNumber>
+              <Cart />
+            </StyledOrderNumber>
             <StyledCartContent />
           </StyledIconBackground>
         </StyledContainer>
