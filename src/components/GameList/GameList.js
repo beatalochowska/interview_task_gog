@@ -1,5 +1,5 @@
 import React from "react";
-import GameCard from "./GameCard/GameCard";
+import GameCards from "./GameCard/GameCards";
 
 import styled from "styled-components";
 
@@ -12,7 +12,7 @@ const StyledList = styled.div`
 function GameList() {
   return (
     <StyledList>
-      <GameCard />
+      <GameCards />
     </StyledList>
   );
 }

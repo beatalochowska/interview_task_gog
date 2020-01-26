@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Cart from "../Cart/Cart";
+import CartContent from "../Cart/CartContent/CartContent";
 
 const StyledContainer = styled.div`
   width: 1090px;
@@ -48,10 +49,6 @@ const StyledIconBackground = styled.div`
 `;
 
 const StyledCartContent = styled.div`
-  width: 370px;
-  height: 65px;
-  position: absolute;
-  background-color: #f7f7f7;
   position: absolute;
   z-index: 10;
   display: none;
@@ -90,7 +87,9 @@ const MenuBar = () => {
             <StyledOrderNumber>
               <Cart />
             </StyledOrderNumber>
-            <StyledCartContent />
+            <StyledCartContent>
+              <CartContent />
+            </StyledCartContent>
           </StyledIconBackground>
         </StyledContainer>
       </StyledTopBar>

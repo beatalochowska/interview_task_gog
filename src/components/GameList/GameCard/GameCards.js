@@ -21,16 +21,14 @@ const StyledGameTitle = styled.div`
   margin: 10px;
 `;
 
-function GameCard() {
-  return gamesData.map(function(x) {
-    return (
-      <StyledCard>
-        <img src={x.link} />
-        <StyledGameTitle>{x.title}</StyledGameTitle>
-        <PriceButton price={x.price} />
-      </StyledCard>
-    );
-  });
+function GameCards() {
+  return gamesData.map(x => (
+    <StyledCard key={x.id}>
+      <img src={x.link} alt={x.title} />
+      <StyledGameTitle>{x.title}</StyledGameTitle>
+      <PriceButton price={x.price} />
+    </StyledCard>
+  ));
 }
 
-export default GameCard;
+export default GameCards;
