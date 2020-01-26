@@ -3,10 +3,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  height: 25px;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
   border-style: solid;
   border-width: 1px;
   border-color: #a6a6a6;
@@ -18,12 +14,17 @@ const StyledButton = styled.button`
   background-color: #dedede;
   padding: 5px 10px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    background-color: #d1d1d1;
+  }
 `;
 
 function PriceButton(props) {
+  // priceButtonClicked = () => {};
   return (
     <>
-      <StyledButton type="StyledButton">$ {props.price} </StyledButton>
+      <StyledButton type="button">$ {props.price} </StyledButton>
     </>
   );
 }

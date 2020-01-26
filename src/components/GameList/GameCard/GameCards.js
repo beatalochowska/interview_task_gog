@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PriceButton from "./PriceButton/PriceButton";
 
 import gamesData from "../../../data/db";
+import DiscountButton from "./DiscountButton/DiscountButton";
 
 const StyledCard = styled.div`
   background-color: rgb(222, 222, 222);
@@ -20,13 +21,23 @@ const StyledGameTitle = styled.div`
   font-weight: 600;
   margin: 10px;
 `;
+const StyledButtons = styled.div`
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: flex-end;
+`;
 
 function GameCards() {
-  return gamesData.map(x => (
-    <StyledCard key={x.id}>
-      <img src={x.link} alt={x.title} />
-      <StyledGameTitle>{x.title}</StyledGameTitle>
-      <PriceButton price={x.price} />
+  return gamesData.map(({ id, title, price, link, sale }) => (
+    <StyledCard key={id}>
+      <img src={link} alt={title} />
+      <StyledGameTitle>{title}</StyledGameTitle>
+      <StyledButtons>
+        <DiscountButton sale={sale} />
+        <PriceButton price={price} />
+      </StyledButtons>
     </StyledCard>
   ));
 }
