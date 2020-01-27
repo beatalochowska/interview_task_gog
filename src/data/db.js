@@ -11,14 +11,14 @@ export default [
     link: "./images/card2.png",
     title: "chaos on deponia",
     price: "8.99",
-    sale: "50%"
+    sale: "20%"
   },
   {
     id: "3",
     link: "./images/card3.png",
     title: "The settlers 2: gold  edition",
     price: "6.99",
-    sale: "50%"
+    sale: "40%"
   },
   {
     id: "4",
@@ -32,6 +32,6 @@ export default [
     link: "./images/card5.png",
     title: "assassin’s creed:  director’s cut",
     price: "9.99",
-    sale: "50%"
+    sale: "70%"
   }
 ];

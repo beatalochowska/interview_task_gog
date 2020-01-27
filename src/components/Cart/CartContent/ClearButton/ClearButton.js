@@ -18,6 +18,7 @@ const StyledClearButton = styled.button`
   border-radius: 5px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   padding: 16px 28px;
+  margin-left: 10px;
 `;
 
 function ClearButton() {
