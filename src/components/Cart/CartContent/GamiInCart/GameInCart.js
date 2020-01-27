@@ -49,13 +49,9 @@ const StyledPrice = styled.div`
 
 function GameInCart() {
   //   const cartContent = [1, 3];
-  //   const isInCart = (table, value) => {
-  //     for (let i = 0; i < table.length; i++) {
-  //       value = i;
-  //     }
-  //   };
-  //   const inCart = gamesData.filter(isInCart(cartContent, { id }));
-  //   console.log(inCart);
+  //   const isInCart = el => el === 1;
+  //   const cartIndex = gamesData.findIndex(isInCart);
+  //   console.log(cartIndex);
   return gamesData.map(({ id, title, price, link }) => (
     <>
       <StyledCartPosition>
