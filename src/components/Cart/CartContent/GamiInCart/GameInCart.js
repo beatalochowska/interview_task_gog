@@ -48,7 +48,15 @@ const StyledPrice = styled.div`
 `;
 
 function GameInCart() {
-  return gamesData.map(({ id, title, price, link, sale }) => (
+  //   const cartContent = [1, 3];
+  //   const isInCart = (table, value) => {
+  //     for (let i = 0; i < table.length; i++) {
+  //       value = i;
+  //     }
+  //   };
+  //   const inCart = gamesData.filter(isInCart(cartContent, { id }));
+  //   console.log(inCart);
+  return gamesData.map(({ id, title, price, link }) => (
     <>
       <StyledCartPosition>
         <StyledGameImage src={link} alt={title} />
