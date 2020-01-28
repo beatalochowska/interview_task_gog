@@ -1,7 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
-import gamesData from "../../../../data/db";
-import { StyledSeparator } from "../CartContent";
+import { StyledSeparator } from "./Cart";
 
 const StyledGameImage = styled.img`
   display: block;
@@ -52,7 +51,7 @@ const StyledGameTitle = styled.div`
 
 function GameInCart({ gamesInCart, removeGameById }) {
   return gamesInCart.map(({ id, title, price, link }) => (
-    <>
+    <Fragment key={id}>
       <StyledCartPosition>
         <StyledGameImage src={link} alt={title} />
         <StyledGameInfo>
@@ -71,7 +70,7 @@ function GameInCart({ gamesInCart, removeGameById }) {
         </StyledGameInfo>
       </StyledCartPosition>
       <StyledSeparator />
-    </>
+    </Fragment>
   ));
 }
 

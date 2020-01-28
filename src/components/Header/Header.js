@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+const StyledSliderImage = styled.img.attrs({
+  src: "./images/game_slider.png"
+})`
+  width: 1060px;
+  height: 370px;
+`;
+
 const StyledHeader = styled.div`
   font-size: 15px;
   color: rgb(38, 38, 38);
@@ -10,12 +17,13 @@ const StyledHeader = styled.div`
   margin: 40px 0 20px;
 `;
 
-function GameHeader() {
+function Header() {
   return (
     <>
-      <StyledHeader>game of the week</StyledHeader>
+      <StyledHeader>Game of the week</StyledHeader>
+      <StyledSliderImage />
     </>
   );
 }
 
-export default GameHeader;
+export default Header;

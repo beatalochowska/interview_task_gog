@@ -21,10 +21,10 @@ const StyledOwnedButton = styled(StyledButton)`
   opacity: 0.5;
 `;
 
-export const UnclickableButton = ({ text }) => (
+export const DisabledButton = ({ text }) => (
   <StyledButton type="button">{text}</StyledButton>
 );
 
-export const UnclickableOwnedButton = ({ text }) => (
+export const DisabledOwnedButton = ({ text }) => (
   <StyledOwnedButton type="button">{text}</StyledOwnedButton>
 );

@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import MenuBar from "./components/MenuBar/MenuBar";
-import GameBar from "./components/GameBar/GameBar";
-import GameList from "./components/GameList/GameList";
+import { Navbar, Header, List } from "./components";
 import styled from "styled-components";
-import GlobalStyles from "./GlobalStyles/GlobalStyles";
 
 const StyledContainer = styled.div`
   height: 100%;
   width: 1090px;
-  padding: 0 15px;
+  padding: 0 15px 15px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -29,16 +26,15 @@ function App() {
     setCartIds(cartIds => cartIds.filter(gameId => gameId !== id));
   return (
     <>
-      <GlobalStyles />
-      <MenuBar
+      <Navbar
         cartIds={cartIds}
         clearCart={clearCart}
         removeGameById={removeGameById}
       />
       <StyledContainer>
-        <GameBar />
+        <Header />
         <StyledList>
-          <GameList cartIds={cartIds} addGameIdToCart={addGameIdToCart} />
+          <List cartIds={cartIds} addGameIdToCart={addGameIdToCart} />
         </StyledList>
       </StyledContainer>
     </>

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import gamesData from "../../../data/db";
-import ClearButton from "./ClearButton/ClearButton";
-import GameInCart from "./GamiInCart/GameInCart";
+import gamesData from "db";
+import ClearButton from "./ClearButton";
+import GameInCart from "./GameInCart";
 
 const StyledGamesInCart = styled.div`
   display: flex;

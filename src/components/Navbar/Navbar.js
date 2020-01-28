@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Cart from "../Cart/Cart";
-import CartContent from "../Cart/CartContent/CartContent";
+import Cart from "./Cart";
 
 const StyledContainer = styled.div`
   width: 1090px;
@@ -51,7 +50,7 @@ const StyledIconBackground = styled.div`
   }
 `;
 
-const StyledCartContent = styled.div`
+const StyledCart = styled.div`
   position: absolute;
   z-index: 10;
   display: none;
@@ -77,7 +76,7 @@ const StyledOrderNumber = styled.div`
   text-align: left;
 `;
 
-const MenuBar = ({ cartIds, clearCart, removeGameById }) => {
+const Navbar = ({ cartIds, clearCart, removeGameById }) => {
   return (
     <>
       <StyledTopBar>
@@ -85,17 +84,15 @@ const MenuBar = ({ cartIds, clearCart, removeGameById }) => {
           <StyledLogo />
           <StyledIconBackground>
             <StyledCartIcon />
-            <StyledOrderNumber>
-              <Cart count={cartIds.length} />
-            </StyledOrderNumber>
+            <StyledOrderNumber>{cartIds.length}</StyledOrderNumber>
             {cartIds.length > 0 && (
-              <StyledCartContent>
-                <CartContent
+              <StyledCart>
+                <Cart
                   cartIds={cartIds}
                   clearCart={clearCart}
                   removeGameById={removeGameById}
                 />
-              </StyledCartContent>
+              </StyledCart>
             )}
           </StyledIconBackground>
         </StyledContainer>
@@ -104,4 +101,4 @@ const MenuBar = ({ cartIds, clearCart, removeGameById }) => {
   );
 };
 
-export default MenuBar;
+export default Navbar;
