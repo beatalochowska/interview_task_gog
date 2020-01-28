@@ -5,7 +5,7 @@ export default [
     title: "oddworld: stranger’s wrath",
     price: 9.99,
     sale: "50%",
-    status: "available"
+    isOwned: false
   },
   {
     id: 2,
@@ -13,15 +13,15 @@ export default [
     title: "chaos on deponia",
     price: "8.99",
     sale: "20%",
-    status: "owned"
+    isOwned: true
   },
   {
     id: 3,
     link: "./images/card3.png",
-    title: "The settlers 2: gold  edition",
+    title: "The settlers 2: gold edition",
     price: 6.99,
     sale: "40%",
-    status: "inCart"
+    isOwned: false
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export default [
     title: "neverwinter nights",
     price: 4.99,
     sale: "50%",
-    status: "available"
+    isOwned: false
   },
   {
     id: 5,
@@ -37,6 +37,6 @@ export default [
     title: "assassin’s creed:  director’s cut",
     price: 9.99,
     sale: "70%",
-    status: "inCart"
+    isOwned: false
   }
 ];

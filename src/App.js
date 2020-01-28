@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MenuBar from "./components/MenuBar/MenuBar";
 import GameBar from "./components/GameBar/GameBar";
 import GameList from "./components/GameList/GameList";
@@ -15,14 +15,27 @@ const StyledContainer = styled.div`
   flex-direction: column;
 `;
 
+const StyledList = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`;
+
 function App() {
+  const [cartIds, setCartIds] = useState([]);
+  const addGameIdToCart = id => setCartIds(cartIds => [...cartIds, id]);
+  const clearCart = () => setCartIds([]);
+  const removeGameById = id =>
+    setCartIds(cartIds => cartIds.filter(gameId => gameId !== id));
   return (
     <>
       <GlobalStyles />
       <MenuBar />
       <StyledContainer>
         <GameBar />
-        <GameList />
+        <StyledList>
+          <GameList cartIds={cartIds} addGameIdToCart={addGameIdToCart} />
+        </StyledList>
       </StyledContainer>
     </>
   );

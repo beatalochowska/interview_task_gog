@@ -1,20 +1,64 @@
 import React from "react";
-import GameCards from "./GameCard/GameCards";
 
 import styled from "styled-components";
 
-const StyledList = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+import PriceButton from "../GameList/GameCard/PriceButton/PriceButton";
+
+import gamesData from "../../data/db";
+import DiscountButton from "../GameList/GameCard/DiscountButton/DiscountButton";
+
+const StyledCard = styled.div`
+  background-color: rgb(222, 222, 222);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+  width: 196px;
 `;
 
-function GameList() {
-  return (
-    <StyledList>
-      <GameCards />
-    </StyledList>
-  );
+const StyledGameImage = styled.img`
+  display: block;
+`;
+
+const StyledGameTitle = styled.div`
+  color: rgb(33, 33, 33);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px;
+  height: 30px;
+`;
+const StyledButtons = styled.div`
+  float: right;
+  padding: 0 10px 10px 0;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+function GameList({ cartIds, addGameIdToCart }) {
+  return gamesData
+    .map(game => ({
+      ...game,
+      isInCart: !!cartIds.find(gameId => gameId === game.id)
+    }))
+    .map(({ id, title, price, link, sale, isOwned, isInCart }) => (
+      <StyledCard key={id}>
+        <StyledGameImage src={link} alt={title} />
+        <StyledGameTitle>{title}</StyledGameTitle>
+        <StyledButtons>
+          {!isOwned && !isInCart && (
+            <>
+              <DiscountButton sale={sale} />
+              <PriceButton
+                price={price}
+                handleClick={event => {
+                  event.preventDefault();
+                  addGameIdToCart(id);
+                }}
+              />
+            </>
+          )}
+          {isOwned && !isInCart && <div>owned</div>}
+          {isInCart && <div>is in cart</div>}
+        </StyledButtons>
+      </StyledCard>
+    ));
 }
 
 export default GameList;
