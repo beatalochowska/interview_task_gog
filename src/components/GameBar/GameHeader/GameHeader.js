@@ -3,9 +3,8 @@ import styled from "styled-components";
 
 const StyledHeader = styled.div`
   font-size: 15px;
-  font-family: "Source Sans Pro";
   color: rgb(38, 38, 38);
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
   margin: 40px 0 20px;

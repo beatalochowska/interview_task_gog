@@ -16,8 +16,6 @@ const StyledGameImage = styled.img`
 `;
 
 const StyledGameTitle = styled.div`
-  font-size: 14px;
-  font-family: "Source Sans Pro";
   color: rgb(33, 33, 33);
   text-transform: uppercase;
   font-weight: 600;

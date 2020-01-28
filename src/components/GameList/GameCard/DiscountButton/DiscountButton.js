@@ -6,8 +6,7 @@ const StyledButton = styled.button`
   border-width: 1px;
   border-color: rgb(0, 144, 94);
   border-radius: 3px;
-  font-size: 13px;
-  font-family: "Source Sans Pro";
+  font-size: 12px;
   color: #fff;
   line-height: 13px;
   background-color: rgb(0, 144, 94);

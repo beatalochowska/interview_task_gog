@@ -13,9 +13,8 @@ const StyledGamesInCart = styled.div`
 
 const StyledContent = styled.div`
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 15px;
-  font-family: "Source Sans Pro";
   line-height: 1.2;
   text-align: left;
   padding: 9px 10px;

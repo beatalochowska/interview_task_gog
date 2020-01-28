@@ -13,12 +13,22 @@ const StyledRemove = styled.div`
   font-size: 12px;
   text-decoration: underline;
   display: none;
+  cursor: pointer;
+`;
+
+const StyledPrice = styled.div`
+  font-size: 13px;
+  color: rgba(64, 64, 64, 0.749);
 `;
 
 const StyledCartPosition = styled.div`
   display: flex;
+  cursor: context-menu;
   &:hover ${StyledRemove} {
     display: block;
+  }
+  &:hover ${StyledPrice} {
+    font-weight: 700;
   }
 `;
 
@@ -32,19 +42,12 @@ const StyledGameInfo = styled.div`
 
 const StyledGameTitle = styled.div`
   text-transform: uppercase;
-  font-size: 14px;
-  font-family: "Source Sans Pro";
   color: rgb(33, 33, 33);
   font-weight: 700;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 190px;
-`;
-
-const StyledPrice = styled.div`
-  font-size: 13px;
-  color: rgba(64, 64, 64, 0.749);
 `;
 
 function GameInCart() {

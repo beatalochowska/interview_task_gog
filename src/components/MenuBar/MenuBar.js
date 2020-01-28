@@ -42,6 +42,9 @@ const StyledIconBackground = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  cursor: pointer;
 
   &:hover {
     background-color: #f7f7f7;
@@ -69,8 +72,6 @@ const StyledCartIcon = styled.img.attrs({
 `;
 
 const StyledOrderNumber = styled.div`
-  font-size: 14px;
-  font-family: "Source Sans Pro";
   color: rgb(64, 64, 64);
   line-height: 1.2;
   text-align: left;
