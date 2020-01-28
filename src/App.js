@@ -20,10 +20,12 @@ const StyledList = styled.div`
 
 function App() {
   const [cartIds, setCartIds] = useState([]);
+
   const addGameIdToCart = id => setCartIds(cartIds => [...cartIds, id]);
   const clearCart = () => setCartIds([]);
   const removeGameById = id =>
     setCartIds(cartIds => cartIds.filter(gameId => gameId !== id));
+
   return (
     <>
       <Navbar

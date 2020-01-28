@@ -55,7 +55,7 @@ const StyledCart = styled.div`
   z-index: 10;
   display: none;
   top: 56px;
-  right: 0;
+  right: -1px;
 
   ${StyledIconBackground}:hover & {
     display: block;
@@ -68,12 +68,14 @@ const StyledCartIcon = styled.img.attrs({
   opacity: 0.851;
   width: 17px;
   height: 15px;
+  margin: 2px;
 `;
 
 const StyledOrderNumber = styled.div`
   color: rgb(64, 64, 64);
   line-height: 1.2;
   text-align: left;
+  margin: 2px;
 `;
 
 const Navbar = ({ cartIds, clearCart, removeGameById }) => {

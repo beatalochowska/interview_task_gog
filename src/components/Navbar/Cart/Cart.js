@@ -31,6 +31,9 @@ export const StyledSeparator = styled.div`
 
 function CartContent({ cartIds, clearCart, removeGameById }) {
   const gamesInCart = cartIds.map(id => gamesData.find(game => game.id === id));
+  const price = gamesInCart.reduce((acc, game) => {
+    return (acc += game.price);
+  }, 0);
   return (
     <>
       <StyledGamesInCart>
@@ -40,9 +43,7 @@ function CartContent({ cartIds, clearCart, removeGameById }) {
             cart
           </div>
           <div>
-            {`$ ${gamesInCart.reduce((acc, game) => {
-              return (acc += game.price);
-            }, 0)}`}
+            $ {price}
             <ClearButton handleClick={clearCart} />
           </div>
         </StyledContent>

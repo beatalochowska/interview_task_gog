@@ -26,9 +26,6 @@ const StyledCartPosition = styled.div`
   &:hover ${StyledRemove} {
     display: block;
   }
-  &:hover ${StyledPrice} {
-    font-weight: 700;
-  }
 `;
 
 const StyledGameInfo = styled.div`
