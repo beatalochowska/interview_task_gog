@@ -77,7 +77,7 @@ const StyledOrderNumber = styled.div`
   text-align: left;
 `;
 
-const MenuBar = () => {
+const MenuBar = ({ cartIds, clearCart, removeGameById }) => {
   return (
     <>
       <StyledTopBar>
@@ -86,11 +86,17 @@ const MenuBar = () => {
           <StyledIconBackground>
             <StyledCartIcon />
             <StyledOrderNumber>
-              <Cart />
+              <Cart count={cartIds.length} />
             </StyledOrderNumber>
-            <StyledCartContent>
-              <CartContent />
-            </StyledCartContent>
+            {cartIds.length > 0 && (
+              <StyledCartContent>
+                <CartContent
+                  cartIds={cartIds}
+                  clearCart={clearCart}
+                  removeGameById={removeGameById}
+                />
+              </StyledCartContent>
+            )}
           </StyledIconBackground>
         </StyledContainer>
       </StyledTopBar>

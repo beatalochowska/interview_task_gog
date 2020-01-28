@@ -30,7 +30,11 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <MenuBar />
+      <MenuBar
+        cartIds={cartIds}
+        clearCart={clearCart}
+        removeGameById={removeGameById}
+      />
       <StyledContainer>
         <GameBar />
         <StyledList>

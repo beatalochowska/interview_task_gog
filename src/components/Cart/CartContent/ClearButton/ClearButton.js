@@ -30,8 +30,10 @@ const StyledClearButton = styled.button`
   }
 `;
 
-function ClearButton() {
-  return <StyledClearButton>Clear cart</StyledClearButton>;
+function ClearButton({ handleClick }) {
+  return (
+    <StyledClearButton onClick={handleClick}>Clear cart</StyledClearButton>
+  );
 }
 
 export default ClearButton;

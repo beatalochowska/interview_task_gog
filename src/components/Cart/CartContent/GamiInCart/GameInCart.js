@@ -50,26 +50,29 @@ const StyledGameTitle = styled.div`
   width: 190px;
 `;
 
-function GameInCart() {
-  const cartContent = [2, 3];
-
-  return cartContent
-    .map(id => gamesData.find(game => game.id === id))
-    .map(({ title, price, link }) => (
-      <>
-        <StyledCartPosition>
-          <StyledGameImage src={link} alt={title} />
-          <StyledGameInfo>
-            <div>
-              <StyledGameTitle>{title}</StyledGameTitle>
-              <StyledRemove>Remove</StyledRemove>
-            </div>
-            <StyledPrice>$ {price}</StyledPrice>
-          </StyledGameInfo>
-        </StyledCartPosition>
-        <StyledSeparator />
-      </>
-    ));
+function GameInCart({ gamesInCart, removeGameById }) {
+  return gamesInCart.map(({ id, title, price, link }) => (
+    <>
+      <StyledCartPosition>
+        <StyledGameImage src={link} alt={title} />
+        <StyledGameInfo>
+          <div>
+            <StyledGameTitle>{title}</StyledGameTitle>
+            <StyledRemove
+              onClick={event => {
+                event.preventDefault();
+                removeGameById(id);
+              }}
+            >
+              Remove
+            </StyledRemove>
+          </div>
+          <StyledPrice>$ {price}</StyledPrice>
+        </StyledGameInfo>
+      </StyledCartPosition>
+      <StyledSeparator />
+    </>
+  ));
 }
 
 export default GameInCart;

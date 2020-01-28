@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Cart from "../Cart";
+import gamesData from "../../../data/db";
 import ClearButton from "./ClearButton/ClearButton";
 import GameInCart from "./GamiInCart/GameInCart";
 
@@ -29,21 +29,23 @@ export const StyledSeparator = styled.div`
   background-color: #e4e4e4;
 `;
 
-function CartContent() {
+function CartContent({ cartIds, clearCart, removeGameById }) {
+  const gamesInCart = cartIds.map(id => gamesData.find(game => game.id === id));
   return (
     <>
       <StyledGamesInCart>
         <StyledContent>
+          <div>{cartIds.length} Items in cart</div>
           <div>
-            <Cart /> Items in cart
-          </div>
-          <div>
-            $ 15.97
-            <ClearButton />
+            ${" "}
+            {gamesInCart.reduce((acc, game) => {
+              return (acc += game.price);
+            }, 0)}
+            <ClearButton handleClick={clearCart} />
           </div>
         </StyledContent>
         <StyledSeparator />
-        <GameInCart />
+        <GameInCart gamesInCart={gamesInCart} removeGameById={removeGameById} />
       </StyledGamesInCart>
     </>
   );

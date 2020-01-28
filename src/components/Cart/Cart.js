@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Cart() {
-  const [cartGameIds, setCardGameIds] = useState([2, 3]);
-  return <span>{cartGameIds.length}</span>;
+function Cart({ count }) {
+  return <span>{count}</span>;
 }
 
 export default Cart;
