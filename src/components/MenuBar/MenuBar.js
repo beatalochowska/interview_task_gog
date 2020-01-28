@@ -57,8 +57,6 @@ const StyledCartContent = styled.div`
   display: none;
   top: 56px;
   right: 0;
-  transition-property: opacity;
-  transition-duration: 0.3s;
 
   ${StyledIconBackground}:hover & {
     display: block;
