@@ -1,9 +1,11 @@
 import React from "react";
-
 import styled from "styled-components";
 
 import PriceButton from "../GameList/GameCard/PriceButton/PriceButton";
-
+import {
+  UnclickableButton,
+  UnclickableOwnedButton
+} from "./GameCard/UnclicableButton/UnclicableButton";
 import gamesData from "../../data/db";
 import DiscountButton from "../GameList/GameCard/DiscountButton/DiscountButton";
 
@@ -24,6 +26,11 @@ const StyledGameTitle = styled.div`
   margin: 10px;
   height: 30px;
 `;
+
+const StyledOwnedGameTitle = styled(StyledGameTitle)`
+  opacity: 0.5;
+`;
+
 const StyledButtons = styled.div`
   float: right;
   padding: 0 10px 10px 0;
@@ -40,7 +47,12 @@ function GameList({ cartIds, addGameIdToCart }) {
     .map(({ id, title, price, link, sale, isOwned, isInCart }) => (
       <StyledCard key={id}>
         <StyledGameImage src={link} alt={title} />
-        <StyledGameTitle>{title}</StyledGameTitle>
+        {isOwned ? (
+          <StyledOwnedGameTitle>{title}</StyledOwnedGameTitle>
+        ) : (
+          <StyledGameTitle>{title}</StyledGameTitle>
+        )}
+
         <StyledButtons>
           {!isOwned && !isInCart && (
             <>
@@ -54,8 +66,8 @@ function GameList({ cartIds, addGameIdToCart }) {
               />
             </>
           )}
-          {isOwned && !isInCart && <div>owned</div>}
-          {isInCart && <div>is in cart</div>}
+          {isOwned && !isInCart && <UnclickableOwnedButton text="Owned" />}
+          {isInCart && <UnclickableButton text="In cart" />}
         </StyledButtons>
       </StyledCard>
     ));

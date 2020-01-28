@@ -35,12 +35,14 @@ function CartContent({ cartIds, clearCart, removeGameById }) {
     <>
       <StyledGamesInCart>
         <StyledContent>
-          <div>{cartIds.length} Items in cart</div>
           <div>
-            ${" "}
-            {gamesInCart.reduce((acc, game) => {
+            {`${cartIds.length} ${cartIds.length === 1 ? "item" : "items"}`} in
+            cart
+          </div>
+          <div>
+            {`$ ${gamesInCart.reduce((acc, game) => {
               return (acc += game.price);
-            }, 0)}
+            }, 0)}`}
             <ClearButton handleClick={clearCart} />
           </div>
         </StyledContent>
