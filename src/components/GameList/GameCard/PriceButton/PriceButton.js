@@ -23,10 +23,14 @@ const StyledButton = styled.button`
 `;
 
 function PriceButton(props) {
-  // priceButtonClicked = () => {};
+  function clickPrice(event) {
+    console.log(`Game: ${props.status}`);
+  }
   return (
     <>
-      <StyledButton type="button">$ {props.price} </StyledButton>
+      <StyledButton type="button" onClick={clickPrice}>
+        $ {props.price}{" "}
+      </StyledButton>
     </>
   );
 }

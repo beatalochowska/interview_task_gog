@@ -30,13 +30,13 @@ const StyledButtons = styled.div`
 `;
 
 function GameCards() {
-  return gamesData.map(({ id, title, price, link, sale }) => (
+  return gamesData.map(({ id, title, price, link, sale, status }) => (
     <StyledCard key={id}>
       <StyledGameImage src={link} alt={title} />
       <StyledGameTitle>{title}</StyledGameTitle>
       <StyledButtons>
         <DiscountButton sale={sale} />
-        <PriceButton price={price} />
+        <PriceButton price={price} title={title} status={status} />
       </StyledButtons>
     </StyledCard>
   ));

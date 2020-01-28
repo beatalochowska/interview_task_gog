@@ -53,30 +53,23 @@ const StyledGameTitle = styled.div`
 function GameInCart() {
   const cartContent = [2, 3];
 
-  const gamesInCart = [];
-
-  for (let i = 0; i < cartContent.length; i++) {
-    const isId = el => (el.id === cartContent[i] ? true : false);
-    const theGames = gamesData.find(isId);
-    gamesInCart.push(theGames);
-    console.log(theGames);
-  }
-
-  return gamesInCart.map(({ title, price, link }) => (
-    <>
-      <StyledCartPosition>
-        <StyledGameImage src={link} alt={title} />
-        <StyledGameInfo>
-          <div>
-            <StyledGameTitle>{title}</StyledGameTitle>
-            <StyledRemove>Remove</StyledRemove>
-          </div>
-          <StyledPrice>$ {price}</StyledPrice>
-        </StyledGameInfo>
-      </StyledCartPosition>
-      <StyledSeparator />
-    </>
-  ));
+  return cartContent
+    .map(id => gamesData.find(game => game.id === id))
+    .map(({ title, price, link }) => (
+      <>
+        <StyledCartPosition>
+          <StyledGameImage src={link} alt={title} />
+          <StyledGameInfo>
+            <div>
+              <StyledGameTitle>{title}</StyledGameTitle>
+              <StyledRemove>Remove</StyledRemove>
+            </div>
+            <StyledPrice>$ {price}</StyledPrice>
+          </StyledGameInfo>
+        </StyledCartPosition>
+        <StyledSeparator />
+      </>
+    ));
 }
 
 export default GameInCart;
