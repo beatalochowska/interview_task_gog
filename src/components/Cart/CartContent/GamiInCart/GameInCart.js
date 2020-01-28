@@ -51,11 +51,18 @@ const StyledGameTitle = styled.div`
 `;
 
 function GameInCart() {
-  //   const cartContent = [1, 3];
-  //   const isInCart = el => el === 1;
-  //   const cartIndex = gamesData.findIndex(isInCart);
-  //   console.log(cartIndex);
-  return gamesData.map(({ id, title, price, link }) => (
+  const cartContent = [2, 3];
+
+  const gamesInCart = [];
+
+  for (let i = 0; i < cartContent.length; i++) {
+    const isId = el => (el.id === cartContent[i] ? true : false);
+    const theGames = gamesData.find(isId);
+    gamesInCart.push(theGames);
+    console.log(theGames);
+  }
+
+  return gamesInCart.map(({ title, price, link }) => (
     <>
       <StyledCartPosition>
         <StyledGameImage src={link} alt={title} />
